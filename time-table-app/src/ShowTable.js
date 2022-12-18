@@ -101,7 +101,6 @@ function ShowTable(props) {
     }
 
 
-
     const tableObjectBuilder = (timetb, levelIndx) => {
         const examDates = timetb.examDates;
         const examTimes = timetb.examTimes;

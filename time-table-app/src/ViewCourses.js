@@ -156,7 +156,7 @@ function ViewCourse() {
             </Container>
 
 
-            <Table bordered className='bg-dark text-light text-center'>
+            <Table bordered responsive className='bg-dark text-light text-center'>
                 <thead>
                     <tr>
                         <th>S/N</th>
