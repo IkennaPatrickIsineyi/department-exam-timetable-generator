@@ -618,6 +618,9 @@ function ShowTable(props) {
                 breakPerPeriod: breakPerPeriod,
                 periodsPerDay: periodsPerDay,
                 hoursPerPeriod: hoursPerPeriod,
+                matrix: allTimeTable.matrix,
+                examDates: allTimeTable.examDates,
+                examTimes: allTimeTable.examTimes,
                 courses: courses
             }
 

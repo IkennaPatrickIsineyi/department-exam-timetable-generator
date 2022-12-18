@@ -12,7 +12,7 @@ function ViewTimeTable(props) {
     const [level3Course, setLevel3Course] = useState([]);
     const [level4Course, setLevel4Course] = useState([]);
 
-    const [matrix, setMatrix] = useState([]);
+    // const [matrix, setMatrix] = useState([]);
 
     const [level1Table, setLevel1Table] = useState([]);
     const [level2Table, setLevel2Table] = useState([]);
@@ -45,8 +45,8 @@ function ViewTimeTable(props) {
       ['cD', 'tCA', '100'], ['cE', 'tCA', '200'], ['cF', 'tCA', '300'],
       ['cG', 'tCA', '400']]; */
 
-    let examTimes = [];
-    let examDates = [];
+    //  let examTimes = [];
+    //  let examDates = [];
 
     const locations = useLocation();
     const navigate = useNavigate();
@@ -72,6 +72,9 @@ function ViewTimeTable(props) {
     const examHalls = locations.state.halls;
     const semester = locations.state.semester;
     const session = locations.state.session;
+    const examDates = locations.state.examDates;
+    const examTimes = locations.state.examTimes;
+    const matrix = locations.state.matrix;
 
     /* const courses = props.courses;
     const startDate = props.startDate;
@@ -241,7 +244,8 @@ function ViewTimeTable(props) {
         //console.log(days1);
         let days = [...days1];
         let table = [];
-        let tableMatrix = [];
+        // let tableMatrix = [];
+        let tableMatrix = [...matrix];
 
         const to12HrForm = (time) => {
             const hour = time.substring(0, 2);
@@ -267,14 +271,14 @@ function ViewTimeTable(props) {
             return time1 + ' - ' + time2;
         }
 
-        const validTimes = [...Array(periodsPerDay).keys()].map((item) => {
-            return genTime(item);
-        });
+        /*   const validTimes = [...Array(periodsPerDay).keys()].map((item) => {
+              return genTime(item);
+          }); */
 
         //setExamTimes(validTimes);
-        console.log('validTimes', validTimes);
+        //  console.log('validTimes', validTimes);
 
-        examTimes = validTimes;
+        //  examTimes = validTimes;
 
         const genDay1 = (dayNum) => {
             //const dayNum=pickRandomElement(days);
@@ -289,12 +293,12 @@ function ViewTimeTable(props) {
             return valu;
         }
 
-        const allDates = [...Array(numOfDays).keys()].map((item) => genDay1(item));
-        const allDates2 = allDates.filter((item) => item !== null);
+        // const allDates = [...Array(numOfDays).keys()].map((item) => genDay1(item));
+        // const allDates2 = allDates.filter((item) => item !== null);
 
         //setExamDates(allDates);
 
-        examDates = allDates2;
+        //   examDates = allDates2;
 
         const pickRandomElement = (arr) => {
             return arr[Math.floor(Math.random() * arr.length)];
@@ -314,11 +318,11 @@ function ViewTimeTable(props) {
         }
 
 
-        for (let date of allDates2) {
-            for (let time of validTimes) {
-                tableMatrix.push(date + '  ' + time);
-            }
-        }
+        /*   for (let date of examDates) {
+              for (let time of examTimes) {
+                  tableMatrix.push(date + '  ' + time);
+              }
+          } */
 
         console.log('tmatrix', tableMatrix);
         console.log('courses', courses);

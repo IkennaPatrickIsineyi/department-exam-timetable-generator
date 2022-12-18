@@ -83,7 +83,10 @@ function StudentHome(props) {
                                         startDate: table.startDate, endDate: table.endDate, startTime: table.startTime,
                                         breakPerPeriod: table.breakPerPeriod, hoursPerPeriod: table.hoursPerPeriod,
                                         semester: body.data[0].semester, session: body.data[0].session,
-                                        timeTable: table.timetable
+                                        timeTable: table.timetable,
+                                        examTimes: table.examTimes,
+                                        examDates: table.examDates,
+                                        matrix: table.matrix,
                                     }
                                 });
 

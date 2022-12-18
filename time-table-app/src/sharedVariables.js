@@ -5,5 +5,5 @@ exports.sharedVariables = {
     // 'url': " https://lying-opposite-joke.glitch.me/api"
 
 
-    // 'url': "http://localhost:5443/api"
+    //'url': "http://localhost:5443/api"
 }
