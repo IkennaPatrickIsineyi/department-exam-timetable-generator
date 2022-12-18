@@ -13,7 +13,7 @@ const path = require("path");
 //const setupDatabase = require("./controllers/hms.sqlite.controllers.js").setupDatabase;
 const fileUpload = require("express-fileupload");
 //set public folder
-const dir = path.join(__dirname, '..', 'time-table-app', 'build');
+const dir = path.join(__dirname, 'time-table-app', 'build');
 
 
 //get Port value
@@ -41,7 +41,7 @@ app.use(cors(
 app.use("/api", router.router);
 
 app.get('/*', function (req, res) {
-	const index = path.join(__dirname, '..', 'time-table-app', 'build', 'index.html')
+	const index = path.join(__dirname, 'time-table-app', 'build', 'index.html')
 	console.log(index);
 	res.sendFile(index);
 })
